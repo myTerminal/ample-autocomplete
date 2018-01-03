@@ -1,0 +1,47 @@
+{
+  "name": "ample-autocomplete",
+  "version": "0.9.0",
+  "description": "ample-autocomplete",
+  "main": "build/ample-autocomplete.js",
+  "scripts": {
+    "debug": "webpack --config webpack.dev.js",
+    "develop": "webpack --config webpack.dev.js --watch",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:myTerminal/ample-autocomplete-webpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/myTerminal/ample-autocomplete-webpack/issues"
+  },
+  "homepage": "https://github.com/myTerminal/ample-autocomplete-webpack#readme",
+  "keywords": [
+    "autocomplete"
+  ],
+  "author": "Mohammed Ismail Ansari <team.terminal@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "16.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-preset-env": "1.6.0",
+    "babel-preset-react": "6.24.1",
+    "clean-webpack-plugin": "0.1.16",
+    "css-loader": "0.28.7",
+    "extract-text-webpack-plugin": "3.0.0",
+    "file-loader": "0.11.2",
+    "jscs": "3.0.7",
+    "jscs-loader": "0.3.0",
+    "jshint": "2.9.5",
+    "jsxhint-loader": "0.2.0",
+    "less": "2.7.2",
+    "less-loader": "4.0.5",
+    "style-loader": "0.18.2",
+    "uglifyjs-webpack-plugin": "0.4.6",
+    "webpack": "3.6.0",
+    "webpack-merge": "4.1.0"
+  }
+}
