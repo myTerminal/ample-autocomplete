@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/ample-autocomplete.less';
 
-export default class App extends React.Component {
+export default class AmpleAutocomplete extends React.Component {
 
     constructor () {
         super();
@@ -11,8 +11,8 @@ export default class App extends React.Component {
 
     render () {
         return (
-            <div>
-            
+            <div className="ample-autocomplete">
+                ample-autocomplete
             </div>
         );
     }

@@ -17,7 +17,7 @@ const extractCSS = new ExtractTextPlugin('styles/' + libraryFileName + '.css');
 
 module.exports = {
     entry: {
-        app: './' + sourceDir + '/scripts/' + libraryFileName + '.jsx'
+        library: './' + sourceDir + '/scripts/' + libraryFileName + '.jsx'
     },
     module: {
         rules: [
@@ -97,6 +97,11 @@ module.exports = {
         umdNamedDefine: true
     },
     externals: {
-        react: 'react'
+        react: {
+            commonjs: 'react',
+            commonjs2: 'react',
+            amd: 'react',
+            root: 'React'
+        }
     }
 };
