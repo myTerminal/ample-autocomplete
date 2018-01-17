@@ -5,9 +5,15 @@
         <meta charset="utf-8" />
 
         <link type="text/css" rel="stylesheet" href="../build/styles/ample-autocomplete.css" />
+        <style>
+            #stage {
+                font-family: OpenSans;
+            }
+        </style>
     </head>
     <body>
         <div id="page"></div>
+        <div id="stage"></div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.production.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/umd/react-dom.production.min.js"></script>
@@ -16,16 +22,19 @@
         <script src="../build/scripts/ample-autocomplete.js"></script>
 
         <script type="text/babel">
-         var options = [
-             'Commander Shepard',
-             'Garrus Vakarian',
-             'Dr. Liara T\'Soni',
-             'Jeff \'Joker\' Moreau',
-             'James Vega'
-         ];
+         var AmpleAutocomplete = ampleAutocomplete.default,
+             options = [
+                 'Commander Shepard',
+                 'Garrus Vakarian',
+                 'Dr. Liara T\'Soni',
+                 'Jeff \'Joker\' Moreau',
+                 'James Vega'
+             ],
+             onSelect = function (option) {
+                document.getElementById('stage').innerHTML += ('<br>You selected: ' + option);
+             };
 
-         var AmpleAutocomplete = ampleAutocomplete.default;
-         ReactDOM.render(<AmpleAutocomplete options={options} placeholder="Search..." />, document.getElementById('page'));
+         ReactDOM.render(<AmpleAutocomplete options={options} placeholder="Search..." onSelect={onSelect} selectOnEnter="true" />, document.getElementById('page'));
         </script>
     </body>
 </html>

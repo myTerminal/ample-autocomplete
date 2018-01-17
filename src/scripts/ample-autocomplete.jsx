@@ -36,7 +36,7 @@ export default class AmpleAutocomplete extends React.Component {
 
     handleTextChangeOnInput (e) {
         var inputText = e.target.value,
-            filteredOptions = this.state.inputOptions.filter(o => o.indexOf(inputText) >- 1)
+            filteredOptions = this.state.inputOptions.filter(o => o.indexOf(inputText) >- 1);
 
         this.setState({
             inputText: inputText,
@@ -48,22 +48,32 @@ export default class AmpleAutocomplete extends React.Component {
     handleKeyEventOnInput (e) {
         var newFocusedOptionIndex = -1;
 
-        if (e.which === 38) {
+        if (e.which === 38) { // Up arrow
             if (this.state.focusedOptionIndex > 0) {
                 newFocusedOptionIndex = this.state.focusedOptionIndex - 1;
             } else {
                 newFocusedOptionIndex = this.state.filteredOptions.length - 1;
             }
-        } else if (e.which === 40) {
+
+            this.updateFocusedIndex(newFocusedOptionIndex);
+        } else if (e.which === 40) { // Down arrow
             if (this.state.focusedOptionIndex < this.state.filteredOptions.length - 1) {
                 newFocusedOptionIndex = this.state.focusedOptionIndex + 1;
             } else {
                 newFocusedOptionIndex = 0;
             }
-        }
 
+            this.updateFocusedIndex(newFocusedOptionIndex);
+        } else if (e.which === 13) { // Enter key
+            if (this.state.focusedOptionIndex !== -1 && this.props.selectOnEnter === 'true') {
+                this.selectOption(this.state.filteredOptions[this.state.focusedOptionIndex]);
+            }
+        }
+    }
+
+    updateFocusedIndex (index) {
         this.setState({
-            focusedOptionIndex: newFocusedOptionIndex
+            focusedOptionIndex: index
         });
     }
 
@@ -82,10 +92,18 @@ export default class AmpleAutocomplete extends React.Component {
     }
 
     handleMouseUpOnOption (option) {
+        this.selectOption(option);
+    }
+
+    selectOption (option) {
         this.setState({
             inputText: option,
             isDropdownVisible: false
         });
+
+        if (this.props.onSelect) {
+            this.props.onSelect(option);
+        }
     }
 
     render () {
