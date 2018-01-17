@@ -13,6 +13,8 @@ export default class AmpleAutocomplete extends React.Component {
             filteredOptions: this.props.options,
             focusedOptionIndex: -1
         };
+
+        this.dropdownCloseTimer = null;
     }
 
     handleFocusOnInput () {
@@ -24,12 +26,12 @@ export default class AmpleAutocomplete extends React.Component {
     handleBlurOnInput () {
         var context = this;
 
-        setTimeout(function () {
+        this.dropdownCloseTimer = setTimeout(function () {
             context.setState({
                 isDropdownVisible: false,
                 focusedOptionIndex: -1
             });
-        }, 100);
+        }, 50);
     }
 
     handleTextChangeOnInput (e) {
@@ -71,9 +73,18 @@ export default class AmpleAutocomplete extends React.Component {
         });
     }
 
-    handleClickOnOption (option) {
+    handleMouseDownOnOption (option) {
+        var context = this;
+
+        setTimeout(function () {
+            clearTimeout(context.dropdownCloseTimer);
+        });
+    }
+
+    handleMouseUpOnOption (option) {
         this.setState({
-            inputText: option
+            inputText: option,
+            isDropdownVisible: false
         });
     }
 
@@ -93,7 +104,8 @@ export default class AmpleAutocomplete extends React.Component {
                             return (
                                 <div className={'ample-autocomplete-option ' + (this.state.focusedOptionIndex === i ? 'focused' : '')}
                                      onMouseOver={() => this.handleMouseOverOnOption(i)}
-                                     onClick={() => this.handleClickOnOption(option)}>
+                                     onMouseDown={() => this.handleMouseDownOnOption(option)}
+                                     onMouseUp={() => this.handleMouseUpOnOption(option)}>
                                     {option}
                                 </div>
                             );
