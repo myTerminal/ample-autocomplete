@@ -16,8 +16,16 @@
         <script src="../build/scripts/ample-autocomplete.js"></script>
 
         <script type="text/babel">
-            var AmpleAutocomplete = ampleAutocomplete.default;
-            ReactDOM.render(<AmpleAutocomplete />, document.getElementById('page'));
+         var options = [
+             'Commander Shepard',
+             'Garrus Vakarian',
+             'Dr. Liara T\'Soni',
+             'Jeff \'Joker\' Moreau',
+             'James Vega'
+         ];
+
+         var AmpleAutocomplete = ampleAutocomplete.default;
+         ReactDOM.render(<AmpleAutocomplete options={options} placeholder="Search..." />, document.getElementById('page'));
         </script>
     </body>
 </html>
