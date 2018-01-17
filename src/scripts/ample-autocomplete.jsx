@@ -15,13 +15,13 @@ export default class AmpleAutocomplete extends React.Component {
         };
     }
 
-    handleFocus () {
+    handleFocusOnInput () {
         this.setState({
             isDropdownVisible: true
         });
     }
 
-    handleBlur () {
+    handleBlurOnInput () {
         var context = this;
 
         setTimeout(function () {
@@ -32,20 +32,18 @@ export default class AmpleAutocomplete extends React.Component {
         }, 100);
     }
 
-    handleTextChange (e) {
-        var inputText = e.target.value;
+    handleTextChangeOnInput (e) {
+        var inputText = e.target.value,
+            filteredOptions = this.state.inputOptions.filter(o => o.indexOf(inputText) >- 1)
 
         this.setState({
             inputText: inputText,
-            filteredOptions: this.state.inputOptions.filter(o => o.indexOf(inputText) >- 1)
-        });
-
-        this.setState({
-            isDropdownVisible: this.state.filteredOptions.length
+            filteredOptions: filteredOptions,
+            isDropdownVisible: filteredOptions.length
         });
     }
 
-    handleKeyDown (e) {
+    handleKeyEventOnInput (e) {
         var newFocusedOptionIndex = -1;
 
         if (e.which === 38) {
@@ -84,10 +82,10 @@ export default class AmpleAutocomplete extends React.Component {
             <div className={'ample-autocomplete ' + (this.state.isDropdownVisible ? 'open' : '')}>
                 <input type="text" className="ample-autocomplete-input"
                        value={this.state.inputText}
-                       onFocus={this.handleFocus.bind(this)}
-                       onBlur={this.handleBlur.bind(this)}
-                       onChange={this.handleTextChange.bind(this)}
-                       onKeyDown={this.handleKeyDown.bind(this)}
+                       onFocus={this.handleFocusOnInput.bind(this)}
+                       onBlur={this.handleBlurOnInput.bind(this)}
+                       onChange={this.handleTextChangeOnInput.bind(this)}
+                       onKeyUp={this.handleKeyEventOnInput.bind(this)}
                        placeholder={this.props.placeholder || 'Enter text'} />
                 <div className="ample-autocomplete-options">
                     {
