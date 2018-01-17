@@ -36,13 +36,23 @@ export default class AmpleAutocomplete extends React.Component {
 
     handleTextChangeOnInput (e) {
         var inputText = e.target.value,
-            filteredOptions = this.state.inputOptions.filter(o => o.indexOf(inputText) >- 1);
+            filteredOptions = this.getFilteredOptions(inputText);
 
         this.setState({
             inputText: inputText,
             filteredOptions: filteredOptions,
             isDropdownVisible: filteredOptions.length
         });
+    }
+
+    getFilteredOptions (inputText) {
+        if (this.props.caseInsensitive === 'true') {
+            var lowerCasedInputText = inputText.toLowerCase();
+
+            return this.state.inputOptions.filter(o => o.toLowerCase().indexOf(lowerCasedInputText) >- 1)
+        } else {
+            return this.state.inputOptions.filter(o => o.indexOf(inputText) >- 1)
+        }
     }
 
     handleKeyEventOnInput (e) {

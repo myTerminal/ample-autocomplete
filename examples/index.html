@@ -34,7 +34,7 @@
                 document.getElementById('stage').innerHTML += ('<br>You selected: ' + option);
              };
 
-         ReactDOM.render(<AmpleAutocomplete options={options} placeholder="Search..." onSelect={onSelect} selectOnEnter="true" />, document.getElementById('page'));
+         ReactDOM.render(<AmpleAutocomplete options={options} placeholder="Search..." onSelect={onSelect} selectOnEnter="true" caseInsensitive="true" />, document.getElementById('page'));
         </script>
     </body>
 </html>
