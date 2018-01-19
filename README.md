@@ -90,7 +90,7 @@ Options can be passed as attributes(props) to the React component on use.
 
 ## Demo
 
-You can view a demo [here](https://myterminal.github.io/ample-autocomplete/example/)
+You can view a demo [here](https://myterminal.github.io/ample-autocomplete/examples).
 
 ## Dependency
 
