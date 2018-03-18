@@ -8,6 +8,7 @@ const outputDir = 'build';
 
 const path = require('path');
 
+const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -16,6 +17,7 @@ const clean = new CleanWebpackPlugin([outputDir]);
 const extractCSS = new ExtractTextPlugin('styles/' + libraryFileName + '.css');
 
 module.exports = {
+    mode: 'development',
     entry: {
         library: './' + sourceDir + '/scripts/' + libraryFileName + '.jsx'
     },
@@ -86,6 +88,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.LoaderOptionsPlugin({ options: {} }),
         clean,
         extractCSS
     ],
