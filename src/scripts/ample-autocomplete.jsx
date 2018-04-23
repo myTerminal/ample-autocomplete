@@ -2,8 +2,7 @@ import React from 'react';
 import '../styles/ample-autocomplete.less';
 
 export default class AmpleAutocomplete extends React.Component {
-
-    constructor (props) {
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -17,13 +16,13 @@ export default class AmpleAutocomplete extends React.Component {
         this.dropdownCloseTimer = null;
     }
 
-    handleFocusOnInput () {
+    handleFocusOnInput() {
         this.setState({
             isDropdownVisible: true
         });
     }
 
-    handleBlurOnInput () {
+    handleBlurOnInput() {
         var context = this;
 
         this.dropdownCloseTimer = setTimeout(function () {
@@ -34,7 +33,7 @@ export default class AmpleAutocomplete extends React.Component {
         }, 50);
     }
 
-    handleTextChangeOnInput (e) {
+    handleTextChangeOnInput(e) {
         var inputText = e.target.value,
             filteredOptions = this.getFilteredOptions(inputText);
 
@@ -45,17 +44,19 @@ export default class AmpleAutocomplete extends React.Component {
         });
     }
 
-    getFilteredOptions (inputText) {
+    getFilteredOptions(inputText) {
         if (this.props.caseInsensitive === 'true') {
             var lowerCasedInputText = inputText.toLowerCase();
 
-            return this.state.inputOptions.filter(o => o.toLowerCase().indexOf(lowerCasedInputText) >- 1)
+            return this.state.inputOptions
+                .filter(o => o.toLowerCase().indexOf(lowerCasedInputText) > -1);
         } else {
-            return this.state.inputOptions.filter(o => o.indexOf(inputText) >- 1)
+            return this.state.inputOptions
+                .filter(o => o.indexOf(inputText) > -1);
         }
     }
 
-    handleKeyEventOnInput (e) {
+    handleKeyEventOnInput(e) {
         var newFocusedOptionIndex = -1;
 
         if (e.which === 38) { // Up arrow
@@ -81,19 +82,19 @@ export default class AmpleAutocomplete extends React.Component {
         }
     }
 
-    updateFocusedIndex (index) {
+    updateFocusedIndex(index) {
         this.setState({
             focusedOptionIndex: index
         });
     }
 
-    handleMouseOverOnOption (i) {
+    handleMouseOverOnOption(i) {
         this.setState({
             focusedOptionIndex: i
         });
     }
 
-    handleMouseDownOnOption (option) {
+    handleMouseDownOnOption(option) {
         var context = this;
 
         setTimeout(function () {
@@ -101,11 +102,11 @@ export default class AmpleAutocomplete extends React.Component {
         });
     }
 
-    handleMouseUpOnOption (option) {
+    handleMouseUpOnOption(option) {
         this.selectOption(option);
     }
 
-    selectOption (option) {
+    selectOption(option) {
         this.setState({
             inputText: option,
             isDropdownVisible: false
@@ -116,28 +117,29 @@ export default class AmpleAutocomplete extends React.Component {
         }
     }
 
-    render () {
+    render() {
         return (
             <div className={'ample-autocomplete ' + (this.state.isDropdownVisible ? 'open' : '')}>
-                <input type="text" className="ample-autocomplete-input"
-                       value={this.state.inputText}
-                       onFocus={this.handleFocusOnInput.bind(this)}
-                       onBlur={this.handleBlurOnInput.bind(this)}
-                       onChange={this.handleTextChangeOnInput.bind(this)}
-                       onKeyUp={this.handleKeyEventOnInput.bind(this)}
-                       placeholder={this.props.placeholder || 'Enter text'} />
+                <input type="text"
+                    className="ample-autocomplete-input"
+                    value={this.state.inputText}
+                    onFocus={this.handleFocusOnInput.bind(this)}
+                    onBlur={this.handleBlurOnInput.bind(this)}
+                    onChange={this.handleTextChangeOnInput.bind(this)}
+                    onKeyUp={this.handleKeyEventOnInput.bind(this)}
+                    placeholder={this.props.placeholder || 'Enter text'} />
                 <div className="ample-autocomplete-options">
                     {
-                        this.state.filteredOptions.map((option, i) => {
-                            return (
+                        this.state.filteredOptions.map((option, i) =>
+                            (
                                 <div className={'ample-autocomplete-option ' + (this.state.focusedOptionIndex === i ? 'focused' : '')}
-                                     onMouseOver={() => this.handleMouseOverOnOption(i)}
-                                     onMouseDown={() => this.handleMouseDownOnOption(option)}
-                                     onMouseUp={() => this.handleMouseUpOnOption(option)}>
+                                    onMouseOver={() => this.handleMouseOverOnOption(i)}
+                                    onMouseDown={() => this.handleMouseDownOnOption(option)}
+                                    onMouseUp={() => this.handleMouseUpOnOption(option)}>
                                     {option}
                                 </div>
-                            );
-                        })
+                            )
+                        )
                     }
                 </div>
             </div>
