@@ -71,9 +71,6 @@ module.exports = {
                         presets: [
                             'babel-preset-env',
                             'babel-preset-react'
-                        ],
-                        plugins: [
-                            'add-module-exports'
                         ]
                     }
                 }
@@ -89,6 +86,7 @@ module.exports = {
         filename: 'scripts/' + libraryFileName + '.js',
         path: path.resolve(__dirname, outputDir),
         library: libraryName,
+        libraryExport: 'default',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },
