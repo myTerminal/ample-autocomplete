@@ -35,7 +35,7 @@ One can use *ample-autocomplete* directly from a web-page by attaching the *ampl
     
     <!-- Usage -->
     <script type="text/javascript">
-        var AmpleAutocomplete = ampleAutocomplete.default,
+        var AmpleAutocomplete = ampleAutocomplete,
             options = [1, 2, 3];
 
         ReactDOM.render(<AmpleAutocomplete options={options} />, document.getElementById('page'));
