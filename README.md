@@ -41,40 +41,37 @@ One can use *ample-autocomplete* directly from a web-page by attaching the *ampl
         ReactDOM.render(<AmpleAutocomplete options={options} />, document.getElementById('page'));
     </script>
 
-### With Browserify or Webpack
+### With [Webpack](https://webpack.js.org), [Browserify](http://browserify.org) or [RequireJS](http://requirejs.org)
 
-One can use *ample-autocomplete* with [Browserify](http://browserify.org) or [Webpack](https://webpack.js.org).
-
-Install *ample-autocomplete* from Npm
+Install *ample-autocomplete* from NPM
 
     npm install ample-autocomplete --save-dev
 
-#### With Browserify
+Consume as an ES6 module
 
-    var AmpleAutocomplete = require('ample-autocomplete');
+    import AutoComplete from 'ample-autocomplete';
 
-The above will let you use the scripts but you will have to attach the stylesheet separately.
+Consume as a CommonJS module
 
-#### With Webpack
+    var AutoComplete = require('ample-autocomplete');
 
-    import AmpleAutocomplete from 'ample-autocomplete';
-    import from '../styles/ample-autocomplete.css';
+Consume as an AMD
+
+    require(['ample-autocomplete'], function (ampleAutocomplete) {
+        // Consume ampleAutocomplete
+    }
+
+In order to use the stylesheet,
+
+Import in your React components as
+
+    import from '[relative/path/to]/ample-autocomplete.css';
+
+or in your stylesheet as
+
+    @import '[relative/path/to]/ample-autocomplete.css';
 
 You may have to use [Babel](https://babeljs.io) for ES6 transpilation.
-
-### On the server
-
-*ample-autocomplete* can also be used at the server as a regular CommonJS module.
-
-Install *ample-autocomplete* from Npm
-
-    npm install ample-autocomplete --save-dev
-
-Then `require` it as a regular CommonJS module
-
-    var ampleAutocomplete = require('ample-autocomplete');
-
-How you consume it depends upon your implementation.
 
 ### Options
 
