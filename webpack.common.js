@@ -13,7 +13,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const clean = new CleanWebpackPlugin([outputDir]);
-
 const extractCSS = new ExtractTextPlugin('styles/' + libraryFileName + '.css');
 
 module.exports = {
