@@ -78,7 +78,7 @@ You may have to use [Babel](https://babeljs.io) for ES6 transpilation.
 Options can be passed as attributes(props) to the React component on use.
 
 * `placeholder` - to provide a custom placeholder to the input box
-* `onSelect` - to provide a handler to be run everytime a value is selected from the dropdown
+* `onSelect` - to provide a handler to be run every time a value is selected from the dropdown
 * `selectOnEnter` - set to `true` if you want the user to be able to select an option using the Enter key
 * `caseInsensitive` - set to `true` for a case-insensitive search
 
