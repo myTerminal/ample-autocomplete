@@ -120,8 +120,7 @@ export default class AmpleAutocomplete extends React.Component {
     render() {
         return (
             <div className={'ample-autocomplete ' + (this.state.isDropdownVisible ? 'open' : '')}>
-                <input type="text"
-                    className="ample-autocomplete-input"
+                <input type="text" className="ample-autocomplete-input"
                     value={this.state.inputText}
                     onFocus={this.handleFocusOnInput.bind(this)}
                     onBlur={this.handleBlurOnInput.bind(this)}
