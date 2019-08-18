@@ -1,6 +1,6 @@
 {
   "name": "ample-autocomplete",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "A simple autocomplete dropdown for React",
   "main": "build/scripts/ample-autocomplete.js",
   "scripts": {

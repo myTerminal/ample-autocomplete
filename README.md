@@ -86,10 +86,6 @@ Options can be passed as attributes(props) to the React component on use.
 
 You can view a demo [here](https://myterminal.github.io/ample-autocomplete/examples).
 
-## Dependency
-
-* [react](https://www.npmjs.com/package/react)
-
 ## To-do
 
 * Unit tests
