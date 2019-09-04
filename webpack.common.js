@@ -20,7 +20,7 @@ const optimizeCSS = new OptimizeCssAssetsPlugin();
 module.exports = {
     mode: 'development',
     entry: {
-        [libraryFileName]: './' + sourceDir + '/scripts/' + libraryFileName + '.jsx'
+        [libraryFileName]: `./${sourceDir}/scripts/${libraryFileName}.jsx`
     },
     module: {
         rules: [
