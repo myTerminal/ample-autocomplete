@@ -3,6 +3,9 @@
   "version": "0.10.2",
   "description": "A simple autocomplete dropdown for React",
   "main": "build/scripts/ample-autocomplete.js",
+  "files": [
+    "/build"
+  ],
   "scripts": {
     "debug": "webpack --config webpack.dev.js",
     "develop": "webpack --config webpack.dev.js --watch",
