@@ -1,15 +1,12 @@
 # ample-autocomplete
 
 [![npm version](https://badge.fury.io/js/ample-autocomplete.svg)](https://badge.fury.io/js/ample-autocomplete)
-[![npm downloads](https://img.shields.io/npm/dt/ample-autocomplete.svg)](https://www.npmjs.com/package/ample-autocomplete)  
+[![npm downloads](https://img.shields.io/npm/dt/ample-autocomplete.svg)](https://www.npmjs.com/package/ample-autocomplete)
+[![License](https://img.shields.io/github/license/myTerminal/ample-autocomplete.svg)](https://opensource.org/licenses/MIT)  
 [![Build Status](https://travis-ci.org/myTerminal/ample-autocomplete.svg?branch=master)](https://travis-ci.org/myTerminal/ample-autocomplete)
 [![Code Climate](https://codeclimate.com/github/myTerminal/ample-autocomplete.png)](https://codeclimate.com/github/myTerminal/ample-autocomplete)
 [![js-myterminal-style](https://img.shields.io/badge/code%20style-myterminal-blue.svg)](https://www.npmjs.com/package/eslint-config/myterminal)
 [![Coverage Status](https://img.shields.io/coveralls/myTerminal/ample-autocomplete.svg)](https://coveralls.io/r/myTerminal/ample-autocomplete?branch=master)  
-[![Dependency Status](https://david-dm.org/myTerminal/ample-autocomplete.svg)](https://david-dm.org/myTerminal/ample-autocomplete)
-[![devDependency Status](https://david-dm.org/myTerminal/ample-autocomplete/dev-status.svg)](https://david-dm.org/myTerminal/ample-autocomplete#info=devDependencies)
-[![peer Dependency Status](https://david-dm.org/myTerminal/ample-autocomplete/peer-status.svg)](https://david-dm.org/myTerminal/ample-autocomplete#info=peerDependencies)  
-[![License](https://img.shields.io/github/license/myTerminal/ample-autocomplete.svg)](https://opensource.org/licenses/MIT)  
 [![NPM](https://nodei.co/npm/ample-autocomplete.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ample-autocomplete/)
 
 A simple autocomplete dropdown for React
