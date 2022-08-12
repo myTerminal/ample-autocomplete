@@ -7,6 +7,7 @@
 [![Code Climate](https://codeclimate.com/github/myTerminal/ample-autocomplete.png)](https://codeclimate.com/github/myTerminal/ample-autocomplete)
 [![js-myterminal-style](https://img.shields.io/badge/code%20style-myterminal-blue.svg)](https://www.npmjs.com/package/eslint-config/myterminal)
 [![Coverage Status](https://img.shields.io/coveralls/myTerminal/ample-autocomplete.svg)](https://coveralls.io/r/myTerminal/ample-autocomplete?branch=master)  
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Y8Y5E5GL7)  
 [![NPM](https://nodei.co/npm/ample-autocomplete.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ample-autocomplete/)
 
 A simple autocomplete dropdown for React
